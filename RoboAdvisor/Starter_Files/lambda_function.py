@@ -86,10 +86,11 @@ def recommend_portfolio(intent_request):
     Performs dialog management and fulfillment for recommending a portfolio.
     """
 
-    first_name = get_slots(intent_request)["firstName"]
-    age = get_slots(intent_request)["age"]
-    investment_amount = get_slots(intent_request)["investmentAmount"]
-    risk_level = get_slots(intent_request)["riskLevel"]
+    slots = get_slots(intent_request)
+    first_name = slots["firstName"]
+    age = slots["age"]
+    investment_amount = slots["investmentAmount"]
+    risk_level = slots["riskLevel"]
     source = intent_request["invocationSource"]
 
     if source == "DialogCodeHook":
